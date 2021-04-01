@@ -13,7 +13,9 @@ class Chronometer {
         if (this.tenthmiliSeconds % 100 == 0) {
           this.currentTime++;
         }
-        callBack();
+        if (callBack) {
+          callBack();
+        }
       }, 10);
     }
   }
@@ -40,7 +42,9 @@ class Chronometer {
   resetClick(callBack) {
     this.currentTime = 0;
     this.tenthmiliSeconds = 0;
-    callBack();
+    if (callBack) {
+      callBack();
+    }
   }
   splitClick() {
     let result = `${this.twoDigitsNumber(
